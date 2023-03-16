@@ -7,8 +7,8 @@ import (
 	"os/exec"
 	"runtime"
 
-	"github.com/AlecAivazis/survey/v2/terminal"
 	shellquote "github.com/kballard/go-shellquote"
+	"github.com/orangekame3/survey/terminal"
 )
 
 /*
