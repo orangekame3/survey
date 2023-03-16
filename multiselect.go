@@ -21,19 +21,20 @@ for them to select using the arrow keys and enter. Response type is a slice of s
 */
 type MultiSelect struct {
 	Renderer
-	Message       string
-	Options       []string
-	Default       interface{}
-	Help          string
-	PageSize      int
-	VimMode       bool
-	FilterMessage string
-	Filter        func(filter string, value string, index int) bool
-	Description   func(value string, index int) string
-	filter        string
-	selectedIndex int
-	checked       map[int]bool
-	showingHelp   bool
+	Message         string
+	Options         []string
+	Default         interface{}
+	Help            string
+	PageSize        int
+	VimMode         bool
+	FilterMessage   string
+	Filter          func(filter string, value string, index int) bool
+	Description     func(value string, index int) string
+	filter          string
+	selectedIndex   int
+	checked         map[int]bool
+	showingHelp     bool
+	IgnoreCheckItem string
 }
 
 // data available to the templates when processing
@@ -146,6 +147,9 @@ func (m *MultiSelect) OnChange(key rune, config *PromptConfig) {
 	} else if !config.RemoveSelectAll && key == terminal.KeyArrowRight {
 		for _, v := range options {
 			m.checked[v.Index] = true
+			if v.Value == m.IgnoreCheckItem {
+				m.checked[v.Index] = false
+			}
 		}
 		if !config.KeepFilter {
 			m.filter = ""
