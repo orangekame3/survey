@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/AlecAivazis/survey/v2/core"
+	"github.com/orangekame3/survey/core"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -7,8 +7,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/AlecAivazis/survey/v2/core"
-	"github.com/AlecAivazis/survey/v2/terminal"
+	"github.com/orangekame3/survey/core"
+	"github.com/orangekame3/survey/terminal"
 	"github.com/stretchr/testify/assert"
 )
 

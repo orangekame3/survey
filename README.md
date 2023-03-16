@@ -496,7 +496,7 @@ and likely to break your application in these situations. See [#337](https://git
 Ordinarily, when you type Ctrl-C, the terminal recognizes this as the QUIT button and delivers a SIGINT signal to the process, which terminates it.
 However, Survey temporarily configures the terminal to deliver control codes as ordinary input bytes.
 When Survey reads a ^C byte (ASCII \x03, "end of text"), it interrupts the current survey and returns a
-`github.com/AlecAivazis/survey/v2/terminal.InterruptErr` from `Ask` or `AskOne`.
+`github.com/orangekame3/survey/terminal.InterruptErr` from `Ask` or `AskOne`.
 If you want to stop the process, handle the returned error in your code:
 
 ```go
